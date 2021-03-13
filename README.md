@@ -2,13 +2,6 @@
 
 Here I will add the stuff I had learn or I need to work on my challenges to understand and practice JavaScript Challenges.
 
-## Getting Started
-
-### Executing program
-
-```
- open index.html
-```
 
 ## Authors
 
