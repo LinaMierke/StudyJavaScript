@@ -40,7 +40,7 @@ console.table(activities);
 
 // loop the outer array
 for (let i = 0; i < activities.length; i++) {
-    // get the size of the inner array Este is the main array 
+    // get the size of the inner array Este is the main array you need to give it a name var, and use that int he next loop to do the array.length
     var innerArrayLength = activities[i].length;
     // loop the inner array, este es lo q contien dentro del array
     for (let j = 0; j < innerArrayLength; j++) {
@@ -77,3 +77,46 @@ activities.forEach((activity) => {
         console.log(data);
     });
 });
+
+//get the first element of each array
+//name the var and map with a funtion inside naming the i that is the index and tgen return what needs to return.
+var res = activities.map(function(i) {
+    return i[0];
+  });
+
+
+  // FINAL 
+
+  function matrixElementsSum(matrix) {
+    for(var r=0,j=0;j<matrix[0].length;j++){
+        for(var i=0;i<matrix.length;i++){
+          if(matrix[i][j]===0) break
+          else r+=matrix[i][j]
+        }
+    }
+    return r
+  }
+
+  //Other option 
+
+  function matrixElementsSum(matrix) {
+    var total = 0;
+    
+    // Navigate each column of rooms
+    // i = current column, j = current floor in column
+    for (var i = 0; i < matrix[0].length; i++) {
+            
+        for (var j = 0; j < matrix.length; j++) {
+            if (matrix[j][i] === 0) {
+                // This room is haunted, so we don't care about the rooms below it. 
+                // Continue to the next column of rooms
+                break;
+            }
+            total += matrix[j][i];
+        }
+        
+    }
+    
+    return total;
+}
+  
