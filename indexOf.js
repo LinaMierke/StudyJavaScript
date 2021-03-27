@@ -7,3 +7,17 @@ fruits.indexOf('oranges');
 fruits.indexOf('pears');
 
 /* indexOf('dates') returns -1, indexOf('oranges') returns 2, and indexOf('pears') returns 1 (the first index at which each element exists). */
+
+/*indexOf() can be incredibly useful for quickly checking for the presence of an element on an array. We have defined a function, quickCheck, that takes an array and an element as arguments. Modify the function using indexOf() so that it returns true if the passed element exists on the array, and false if it does not.*/
+ //-1 means that doesn't exist, so when I add -1 I indicate if the element != -1 then you can add it to 
+function quickCheck(arr, elem) {
+    // Only change code below this line
+  if(arr.indexOf(elem)!= -1){
+    return true
+  } else{
+    return false
+  }
+    // Only change code above this line
+  }
+  
+  console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
