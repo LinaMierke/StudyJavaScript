@@ -21,3 +21,22 @@ function quickCheck(arr, elem) {
   }
   
   console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+
+  /* Find the index position of a element in an array */
+
+var indices = [];
+var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+var element = 'a';
+//search in the array the position idex of element
+var idx = array.indexOf(element);
+// in indexOF -1 indicates that doesn't exist : so => mientras que ^ en idx don't be there.
+
+while (idx != -1) {
+  //push to the new empty array
+  indices.push(idx);
+  // but idx now is find the index of element , in 
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices);
+// [0, 2, 4]
