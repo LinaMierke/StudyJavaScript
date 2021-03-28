@@ -106,3 +106,87 @@ delete foods.strawberries;
 // Only change code above this line
 
 console.log(foods);
+
+
+
+//------------------------------------------------------------------------------------- 
+//-------------------------------------------------------------------------------------
+//hasOwnProperty// 
+// check if an object has an specific property of
+
+//ONE : Object.hasOwnPropety('propertyName')
+// TWO: 'Property' in Object
+
+
+//-------------------------------------------------------------------------------------
+//For ...in 
+/* Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a for...in statement. For our users object, this could look like:*/
+
+for (let user in users) {
+  console.log(user);
+}
+
+
+//-===================
+//Find they keys on the Object/// Oject constitution: 
+// object, keys: values
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+// expected output: Array ["a", "b", "c"]
+
+//===================
+// for(let user in users){
+//console.log (users)
+//}
+
+//==============
+
+/* */
+const usersObj= {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+// create a function that counts how many users are online, so we create a function that passes the users as arguments
+function countOnline(usersObj) {
+  // Only change code below this line
+  //create a variable where the count id gonna be storaged
+let count = 0;
+// for loop to go into each section of the object and here it is the new concept learnt => for (let user in users)
+
+for(let user in usersObj){
+  //if the  object[user].online that is the property is true, so is online
+  if(usersObj[user].online === true){
+    // count it and sum there 
+    count++;
+  }
+}
+//return the final number sum
+return count;
+  // Only change code above this line
+}
+
+//++++++++++++++++++++++ FOR++++++IN++++
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+for (variable in object)
+  statement
