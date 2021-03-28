@@ -190,3 +190,16 @@ for (const property in object) {
 // "c: 3"
 for (variable in object)
   statement
+
+  //another way 
+
+  var obj = {a: 1, b: 2, c: 3};
+
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+
+// Output:
+// "obj.a = 1"
+// "obj.b = 2"
+// "obj.c = 3"
