@@ -36,3 +36,18 @@ function factorialize(n) {
 /*Understanding recursion
 
 Recursion refers to a function repeating (calling) itself. In this case we are basically returning the given number (i.e. 5), multiplied by the function itself but this time the value passed to the num parameter is num-1 (which initially translates to 4). The very function is going to run inside itself interesting, Eh */
+
+//Option Three: For loop 
+
+function factorialize(num) {
+    for (var product = 1; num > 0; num--) {
+      product *= num;
+    }
+    return product;
+  }
+  
+  factorialize(5);
+
+  /*Since the return values for the function will always be greater than or equal to 1, product is initialized at one. For the case where the number is 0, the for loop condition will be false, but since product is initialized as 1, it will have the correct value when the return statement is executed.
+
+For all numbers passed to the function which are greater than one, the simple for loop will decrement num by one each iteration and recalculate product down to the value 1.*/
