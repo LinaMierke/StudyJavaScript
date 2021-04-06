@@ -21,8 +21,8 @@ function largestNumArr() {
         largest = arr[i][j];
       }
     }
-    // here i don;t understand whi the return has an [i] along. After the inner loop, save the largest number in the corresponding position inside of the results array.
-    return ([i] = largest);
+    // here i don;t understand why has an [i] along. After the inner loop, save the largest number in the corresponding position inside of the results array.
+    max [i] = largest;
   }
   return max;
 }
@@ -52,3 +52,24 @@ console.log(array1.reduce(reducer));
 // 5 + 1 + 2 + 3 + 4
 console.log(array1.reduce(reducer, 5));
 // expected output: 15
+
+
+//// Other declarative 
+
+// use a map and the bind and math.max.
+// I dont understand bind YET
+
+
+function largestOfFour(arr) {
+    return arr.map(Function.apply.bind(Math.max, null));
+  }
+
+  // recursive apporach
+
+  // ternary.. if largo del array no es  entonces return el array, sino: la funcion slice 1.(empieza a contar desde el punto index 1 ) no se 
+  function largestOfFour(arr, finalArr = []) {
+    return !arr.length
+      ? finalArr
+      //aca entiendo: toma el slice de array desde index 1, y el array q ue esta empty lo une con el numero maximo del array 0, pero no entiendo .. umm ok. quizas es el array general el de afuera en position 1, y el de adentro hace el max? 
+      : largestOfFour(arr.slice(1), finalArr.concat(Math.max(...arr[0])))
+  }
