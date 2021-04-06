@@ -6,7 +6,7 @@ Remember, you can iterate through an array with a simple for loop, and access ea
 // what i know to do: a simple loop
 //what to google: how to js double loop, math.max
 
-//Procedural approach
+//++++++++++++++++++++++++++++++++++++++++++++Procedural approach
 function largestNumArr() {
   //create a variable that hold the max of each inner array
   let max = [];
@@ -26,3 +26,29 @@ function largestNumArr() {
   }
   return max;
 }
+
+//++++++++++++++++++++++++++++++++Declarative approach
+
+function largestOf(arr) {
+  //map into the main array to a new array with the .map()
+  return arr.map(function (group) {
+    //in each inner array and use the .reduce() to bring it just to one elenent where we have  a callback function and have the previous value and compare the 2 of them and
+    return group.reduce(function (prev, current) {
+      // will do a ternary and will return the current if it is higher if not will return the previous
+      return current > prev ? current : prev;
+    });
+  });
+}
+
+///////// prototype.reduce
+
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
