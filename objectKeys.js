@@ -25,7 +25,8 @@ let users = {
     // Only change code above this line
   }
   
-  console.log(getArrayOfUsers(users));
+  
+  //output : [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ]
 
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++
