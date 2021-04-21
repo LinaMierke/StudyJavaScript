@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Arrow Functions</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <ul>
+      <li data-time="5:17">Flexbox Video</li>
+      <li data-time="8:22">Flexbox Video</li>
+      <li data-time="3:34">Redux Video</li>
+      <li data-time="5:23">Flexbox Video</li>
+      <li data-time="7:12">Flexbox Video</li>
+      <li data-time="7:24">Redux Video</li>
+      <li data-time="6:46">Flexbox Video</li>
+      <li data-time="4:45">Flexbox Video</li>
+      <li data-time="4:40">Flexbox Video</li>
+      <li data-time="7:58">Redux Video</li>
+      <li data-time="11:51">Flexbox Video</li>
+      <li data-time="9:13">Flexbox Video</li>
+      <li data-time="5:50">Flexbox Video</li>
+      <li data-time="5:52">Redux Video</li>
+      <li data-time="5:49">Flexbox Video</li>
+      <li data-time="8:57">Flexbox Video</li>
+      <li data-time="11:29">Flexbox Video</li>
+      <li data-time="3:07">Flexbox Video</li>
+      <li data-time="5:59">Redux Video</li>
+      <li data-time="3:31">Flexbox Video</li>
+    </ul>
 
-<ul>
-  <li data-time="5:17">Flexbox Video</li>
-  <li data-time="8:22">Flexbox Video</li>
-  <li data-time="3:34">Redux Video</li>
-  <li data-time="5:23">Flexbox Video</li>
-  <li data-time="7:12">Flexbox Video</li>
-  <li data-time="7:24">Redux Video</li>
-  <li data-time="6:46">Flexbox Video</li>
-  <li data-time="4:45">Flexbox Video</li>
-  <li data-time="4:40">Flexbox Video</li>
-  <li data-time="7:58">Redux Video</li>
-  <li data-time="11:51">Flexbox Video</li>
-  <li data-time="9:13">Flexbox Video</li>
-  <li data-time="5:50">Flexbox Video</li>
-  <li data-time="5:52">Redux Video</li>
-  <li data-time="5:49">Flexbox Video</li>
-  <li data-time="8:57">Flexbox Video</li>
-  <li data-time="11:29">Flexbox Video</li>
-  <li data-time="3:07">Flexbox Video</li>
-  <li data-time="5:59">Redux Video</li>
-  <li data-time="3:31">Flexbox Video</li>
-</ul>
+    <script>
+      // 1. ++++++Select all the list items on the page and convert to array
+      //good job, add the document query All and no clas or anythng but there is an data-time attribute so we use a [] to select attributes
+      const items = Array.from(document.querySelector("[data-time]"));
+      //put them arroun Array.from() to convert into array? what!!
 
-<script>
+      //2.  ++++++Filter for only the elements that contain the word 'Flexbox'
+      const filtered = item.filter((item) =>
+        item.textContent.includes("Flexbox")
+      )
 
-  // Select all the list items on the page and convert to array
-
-  // Filter for only the elements that contain the word 'Flexbox'
-
-  // map down to a list of time strings
-
-  // map to an array of seconds
-
-  // reduce to get total
-
-  // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
-
-</script>
-</body>
+      // 3. ++++++map down to a list of time strings
+.map(item => item.dataset.time)
+      // 4. ++++++map to an array of seconds
+.map(timeCode => {
+  //esto e suna cadeneta, enronces es un filter de los  qdicen flexbox luego un map dentro para ver el tiempo y luego de ese tiempo separar los minutos y seundos y ahora convertir los minutos y segundos array en  numeros porque salian como strings
+  const parts = timecode.split(':').map(part => parseFloat(part));
+  //convert all to seconds
+  return (parts[0] * 60) + parts[1]
+})
+      // 5. ++++++reduce to get total
+.reduce((runningTotal, seconds)=> runningTotal + seconds, 0)
+      // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
+    </script>
+  </body>
 </html>
