@@ -51,3 +51,17 @@ console.log(i);
 // Here the console will display the value 2, and an error that i is not defined.
 
 // i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() returned the correct value because three different i variables with unique values (0, 1, and 2) were created by the let keyword within the loop statement.
+
+//+++++++++WES BOS! +++++++++
+// varhere will print 100, if they are var {} is like a jail that is only available inside , so if i try to consoloe.log width it won't work because is outside the scope.
+function setWidth() {
+  width = 100;
+  console.log(width);
+}
+setWidth();
+// here we declare the age outside but the dogYears is inside the {} jail too, but if you run it it will print the result?? why? because is not inside  afunction, it is inside a if statement
+var age = 100;
+if (age > 12) {
+  var dogYears = age * 7;
+  console.log(`You are ${dogYears} dog years old!`);
+}
