@@ -59,9 +59,53 @@ function setWidth() {
   console.log(width);
 }
 setWidth();
-// here we declare the age outside but the dogYears is inside the {} jail too, but if you run it it will print the result?? why? because is not inside  afunction, it is inside a if statement
+// here we declare the age outside but the dogYears is inside the {} jail too, but if you run it it will print the result?? why? because is not inside  afunction, it is inside a if statement(block scope)..if we change the var to LET dogYears won't work
 var age = 100;
 if (age > 12) {
   var dogYears = age * 7;
   console.log(`You are ${dogYears} dog years old!`);
 }
+
+// var is function scope and let and const are block scope
+//var you can reuse the variable name, and won;t tell you.. with let you can not reassignet the value
+//let you can update the info i and const can't change
+
+//use in afor loop with var: the result of i will be 10 becauase is changing the variable, overwritting it.
+
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+  //The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds.= 1000 means 1000ms and is 1 sec. TIP runs one time if you need it to run constantly you need to use something called setInterval(), and use clearTimeout() to prevent the function from running
+  setTimeout(function () {
+    console.log("the number is " + i);
+  }, 1000);
+}
+//if we change the var in the for loop to a let: 
+
+for (let i = 0; i < 10; i++){
+  console.log(i);
+  setTimeout(function(){
+    console.log('The number is ' + i);
+  }, 1000)
+}
+//this will be the result:
+
+/*
+1
+2
+3
+4
+5
+6
+7
+8
+9
+The number is 0
+The number is 1
+The number is 3
+The number is 4
+The number is 5
+The number is 6
+The number is 7
+The number is 8
+The number is 9
+*/
