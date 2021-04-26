@@ -4,3 +4,11 @@
 const name = "Snicker"
 const age = 2;
 const sentence = `My dog ${name} is ${age * 7 } years old`
+
+// Functions passing 
+
+function highlight (strings, ...values){
+
+}
+
+const sentence2 = highlight `My dog ${name} is ${age * 7 } years old`
